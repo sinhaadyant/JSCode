@@ -15,14 +15,34 @@ function addQuerySelectorToBoards(){
     const boards = document.querySelectorAll(".board")
     
     boards.forEach((board)=>{
-        board.addEventListener("dragover",()=>{
+        board.addEventListener("dragover",(e)=>{
             const task = document.querySelector(".dragging");
-            board.appendChild(task)
+            const closestEle = getClosestElement(board,e.clientY);
+            if(closestEle){
+                board.insertBefore(task,closestEle);
+            }else{
+                board.appendChild(task)
+            }
             updateBoardTaskCount();
 
         })
         
     })
+}
+function getClosestElement(board,yAxis){
+    let closestEle = null;
+    let closestDistance = Number.NEGATIVE_INFINITY;
+    console.log("dragging",yAxis)
+    const tasksInBoard = board.querySelectorAll(".task:not(.dragging)")  
+    tasksInBoard.forEach((task)=>{
+        const {top} = task.getBoundingClientRect();
+        const distance = yAxis-top;
+        if(distance<0 && distance> closestDistance){
+            closestDistance = distance
+            closestEle = task;
+        }
+    })  
+    return closestEle;
 }
 
 function updateBoardTaskCount() {

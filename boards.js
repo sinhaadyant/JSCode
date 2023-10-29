@@ -8,13 +8,16 @@ addBoardButton.addEventListener("click", () => {
     if (value) {
         //   <div class="board" id="todo-board">
         const board = document.createElement("div");
-        board.innerHTML = `<h3>${value} <span class="count-label">0</span></h3>`;
+        board.innerHTML = `<h3> <span class="circle-ring"></span>
+        <span class="board-title" contenteditable="true">${value}</span>
+        <span class="count-label">0</span></h3>`;
         board.classList.add("board");
         container.appendChild(board);
         inputTextBoard.value = "";
         validationMessageBoard.style.display = "none";
         inputTextBoard.style.borderColor =`grey` 
         addQuerySelectorToBoards()
+        addListnerForEditable()
         updateBoardTaskCount();
 
     } else {

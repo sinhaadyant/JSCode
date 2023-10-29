@@ -7,6 +7,8 @@
     <title>Kanban Board</title>
 </head>
 <body>
+
+
     <div class="add-task">
         <input type="text" id="task-input" placeholder="Enter a task">
         <button class="add-button" id="add-task">Add Task</button>
@@ -21,17 +23,34 @@
     <div class="container" id="main-container">
         <div class="board" id="todo-board">
             <h3>
-                Todo
+                <span class="circle-ring"></span>
+                <span class="board-title" contenteditable="true">Todo</span>
+
                 <span class="count-label">0</span>
             </h3>
+            <p class="task" draggable="true" contenteditable="true">
+                AA1
+
+                <span>🗑️</span>
+            </p>
+            <p class="task" draggable="true" contenteditable="true">AA32</p>
+            <p class="task" draggable="true" contenteditable="true">AA3</p>
+            <p class="task" draggable="true" contenteditable="true">AA4</p>
         </div>
         <div class="board">
             <h3>
-                Done
+                <span class="circle-ring"></span>
+                <span class="board-title" contenteditable="true">Title</span>
                 <span class="count-label">0</span>
             </h3> 
+            <p class="task" draggable="true" contenteditable="true">SAA1</p>
+            <p class="task" draggable="true" contenteditable="true">SAA32</p>
+            <p class="task" draggable="true" contenteditable="true">SAA3</p>
+            <p class="task" draggable="true" contenteditable="true">SAA4</p>
         </div>
     </div>
+
+
     <script src="kanban.js"></script>
     <script src="tasks.js"></script>
     <script src="boards.js"></script>
