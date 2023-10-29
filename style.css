@@ -1,5 +1,3 @@
-/* Base styles */
-
 :root {
     font-size: 10px;
 }
@@ -236,6 +234,7 @@ body {
     align-content: start;
     padding: 0 0.6rem 0.5rem;
     overflow-y: auto;
+    min-height: 100px; 
 }
 
 .board-items::-webkit-scrollbar {
