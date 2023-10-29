@@ -16,6 +16,7 @@
 
                 boardItems.appendChild(newTaskItem);
                 addQuerySelectorToTasks()
+                searchTasks()
                 taskInputs[index].value = "";
             }
         });
