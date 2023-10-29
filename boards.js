@@ -9,7 +9,10 @@ if(addBoardButton){
             //   <div class="board" id="todo-board">
             const board = document.createElement("div");
             board.classList.add("board");
-            board.innerHTML = `<h3  class="board-title"> <span class="circle-ring"></span>
+            board.innerHTML = `<h3  class="board-title">
+            <div class="board-header"> 
+                <input type="color" value="#00ff00"> 
+              </div>
             <span class="board-title" contenteditable="true">${value}</span>
             <span class="count-label">0</span></h3>
             <ul class="board-items">

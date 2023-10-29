@@ -28,9 +28,11 @@
 	<div class="board"  id="todo-board"> 
 
 		<h3 class="board-title">
-            <span class="circle-ring"></span>
+            <div class="board-header"> 
+                <input type="color" value="#00ff00"> 
+              </div>
             <span class="board-title" contenteditable="true">Tasks to Do</span>
-            <span class="count-label">0</span>
+            <span class="count-label">0</span> 
         </h3>
 
 		<ul class="board-items">
@@ -50,10 +52,13 @@
 
 	<div class="board">
 
-		<h3 class="board-title">
-            <span class="circle-ring"></span>
+		<h3 class="board-title"> 
+            <div class="board-header"> 
+                <input type="color" value="#00ff00"> 
+              </div>
             <span class="board-title" contenteditable="true">Completed</span>
             <span class="count-label">0</span>
+            <input type="color" style="display: none;">
         </h3>
 
 		<ul class="board-items">
@@ -78,5 +83,6 @@
     <script src="boards.js"></script>
     <script src="editable.js"></script>
     <script src="search.js"></script>
+    <script src="color.js"></script>
 </body>
 </html>

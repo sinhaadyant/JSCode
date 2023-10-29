@@ -457,5 +457,13 @@ Remove or comment-out the code block below to see how the browser will fall-back
 
 .add-card-btn:hover {
     background-color: #005c91;
-}
-
+} 
+input[type="color"] {
+    outline: none;
+    background: transparent;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    
+  } 
