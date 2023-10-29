@@ -12,13 +12,13 @@ function addQuerySelectorToTasks(){
     })
 }
 function addQuerySelectorToBoards(){
-    const boards = document.querySelectorAll(".board")
+    const boards = document.querySelectorAll(".board ul")
     
     boards.forEach((board)=>{
         board.addEventListener("dragover",(e)=>{
             const task = document.querySelector(".dragging");
             const closestEle = getClosestElement(board,e.clientY);
-            if(closestEle){
+            if(task && board && closestEle){
                 board.insertBefore(task,closestEle);
             }else{
                 board.appendChild(task)
@@ -32,8 +32,7 @@ function addQuerySelectorToBoards(){
 function getClosestElement(board,yAxis){
     let closestEle = null;
     let closestDistance = Number.NEGATIVE_INFINITY;
-    console.log("dragging",yAxis)
-    const tasksInBoard = board.querySelectorAll(".task:not(.dragging)")  
+     const tasksInBoard = board.querySelectorAll(".task:not(.dragging)")  
     tasksInBoard.forEach((task)=>{
         const {top} = task.getBoundingClientRect();
         const distance = yAxis-top;

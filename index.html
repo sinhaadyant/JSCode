@@ -7,8 +7,72 @@
     <title>Kanban Board</title>
 </head>
 <body>
+  
+<section class="board-info-bar">
 
+	<div class="board-controls">
 
+		<button class="board-title btn">
+			<h2>Kanban Board</h2>
+		</button>
+	</div>
+    <div class="board-search">
+        <input type="search" class="board-search-input" aria-label="Board Search">
+        <i class="search-icon" aria-hidden="true">🔎</i>
+    </div>
+ 
+
+</section> 
+<section class="lists-container" id="main-container">
+    
+	<div class="board"  id="todo-board"> 
+
+		<h3 class="board-title">
+            <span class="circle-ring"></span>
+            <span class="board-title" contenteditable="true">Tasks to Do</span>
+            <span class="count-label">0</span>
+        </h3>
+
+		<ul class="board-items">
+			<li class="task" draggable="true" >Complete mock-up for client website</li>
+			<li class="task" draggable="true" >Email mock-up to client for feedback</li>
+			<li class="task" draggable="true" >Update personal website header background image</li>
+			<li class="task" draggable="true" >Update personal website heading fonts</li>
+			 
+		</ul>
+
+		<div class="add-task-container">
+            <textarea class="add-task-input" placeholder="Add a task"></textarea>
+            <button class="add-card-btn btn">Add a task</button>
+        </div>
+
+	</div>
+
+	<div class="board">
+
+		<h3 class="board-title">
+            <span class="circle-ring"></span>
+            <span class="board-title" contenteditable="true">Completed</span>
+            <span class="count-label">0</span>
+        </h3>
+
+		<ul class="board-items">
+			<li class="task" draggable="true" >Clear email inbox</li>
+			<li class="task" draggable="true" >Finalise requirements for client web design</li> 
+		</ul>
+
+        <div class="add-task-container">
+            <textarea class="add-task-input" placeholder="Add a task"></textarea>
+            <button class="add-card-btn btn">Add a task</button>
+        </div>
+	</div> 
+	 <div class="input-with-button">
+        <input type="text" id="board-input" placeholder="Enter Board Name">
+        <button class="add-board-btn btn" id="add-board">Add Board</button>
+    </div>
+ 
+</section> 
+<!-- 
     <div class="add-task">
         <input type="text" id="task-input" placeholder="Enter a task">
         <button class="add-button" id="add-task">Add Task</button>
@@ -28,14 +92,14 @@
 
                 <span class="count-label">0</span>
             </h3>
-            <p class="task" draggable="true" contenteditable="true">
+            <p class="task" draggable="true" >
                 AA1
 
                 <span>🗑️</span>
             </p>
-            <p class="task" draggable="true" contenteditable="true">AA32</p>
-            <p class="task" draggable="true" contenteditable="true">AA3</p>
-            <p class="task" draggable="true" contenteditable="true">AA4</p>
+            <p class="task" draggable="true" >AA32</p>
+            <p class="task" draggable="true" >AA3</p>
+            <p class="task" draggable="true" >AA4</p>
         </div>
         <div class="board">
             <h3>
@@ -43,12 +107,12 @@
                 <span class="board-title" contenteditable="true">Title</span>
                 <span class="count-label">0</span>
             </h3> 
-            <p class="task" draggable="true" contenteditable="true">SAA1</p>
-            <p class="task" draggable="true" contenteditable="true">SAA32</p>
-            <p class="task" draggable="true" contenteditable="true">SAA3</p>
-            <p class="task" draggable="true" contenteditable="true">SAA4</p>
+            <p class="task" draggable="true" >SAA1</p>
+            <p class="task" draggable="true" >SAA32</p>
+            <p class="task" draggable="true" >SAA3</p>
+            <p class="task" draggable="true" >SAA4</p>
         </div>
-    </div>
+    </div> -->
 
 
     <script src="kanban.js"></script>

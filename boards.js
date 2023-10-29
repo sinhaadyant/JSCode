@@ -1,28 +1,38 @@
 const addBoardButton = document.getElementById("add-board");
 const inputTextBoard = document.getElementById("board-input");
 const container = document.getElementById("main-container")
-const validationMessageBoard = document.getElementById("validation-message-board");
+ 
+if(addBoardButton){
+    addBoardButton.addEventListener("click", () => {
+        const value = inputTextBoard.value.trim();
+        if (value) {
+            //   <div class="board" id="todo-board">
+            const board = document.createElement("div");
+            board.classList.add("board");
+            board.innerHTML = `<h3  class="board-title"> <span class="circle-ring"></span>
+            <span class="board-title" contenteditable="true">${value}</span>
+            <span class="count-label">0</span></h3>
+            <ul class="board-items">
+    		</ul>   
+    		<div class="add-task-container">
+                <textarea class="add-task-input" placeholder="Add a task"></textarea>
+                <button class="add-card-btn btn">Add a task</button>
+            </div>
+            `;
+            const addBoard = document.querySelector(".input-with-button")
+            container.insertBefore(board,addBoard);
 
-addBoardButton.addEventListener("click", () => {
-    const value = inputTextBoard.value.trim();
-    if (value) {
-        //   <div class="board" id="todo-board">
-        const board = document.createElement("div");
-        board.innerHTML = `<h3> <span class="circle-ring"></span>
-        <span class="board-title" contenteditable="true">${value}</span>
-        <span class="count-label">0</span></h3>`;
-        board.classList.add("board");
-        container.appendChild(board);
-        inputTextBoard.value = "";
-        validationMessageBoard.style.display = "none";
-        inputTextBoard.style.borderColor =`grey` 
-        addQuerySelectorToBoards()
-        addListnerForEditable()
-        updateBoardTaskCount();
-
-    } else {
-        inputTextBoard.style.borderColor =`red` 
-        validationMessageBoard.innerText = "Please enter board name.";
-        validationMessageBoard.style.display = "block";
-    }
-});
+            addQuerySelectorToBoards()
+            addListnerForEditable()
+            updateBoardTaskCount();
+            addTaskEventListener()
+            
+            inputTextBoard.value = ""; 
+            inputTextBoard.style.borderColor =`grey` 
+            
+    
+        } else {
+            inputTextBoard.style.borderColor =`red`  
+        }
+    });
+} 

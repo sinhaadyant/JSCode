@@ -1,27 +1,24 @@
-const addButton = document.getElementById("add-task");
-const inputText = document.getElementById("task-input");
-const todoBoard = document.getElementById("todo-board")
-const validationMessage = document.getElementById("validation-message");
+ function addTaskEventListener() {
+    const addTaskButtons = document.querySelectorAll(".add-card-btn");
+    const taskInputs = document.querySelectorAll(".add-task-input");
 
-addButton.addEventListener("click", () => {
-    const value = inputText.value.trim();
-    if (value) {
-        const task = document.createElement("p");
-        task.innerText = value;
-        task.classList.add("task");
-        task.setAttribute("draggable", true);
-        task.setAttribute("contenteditable", true);
-        todoBoard.appendChild(task);
-        inputText.value = "";
-        validationMessage.style.display = "none";
-        inputText.style.borderColor =`grey` 
-        addQuerySelectorToTasks()
-        updateBoardTaskCount();
+    addTaskButtons.forEach((addTaskButton, index) => {
+        addTaskButton.addEventListener("click", () => {
+            console.log("Add clicked");
+            const taskText = taskInputs[index].value.trim();
+            if (taskText !== "") {
+                const newTaskItem = document.createElement("li");
+                newTaskItem.textContent = taskText;
+                newTaskItem.classList.add("task");
+                newTaskItem.draggable = true;
+                const board = addTaskButton.closest(".board");
+                const boardItems = board.querySelector(".board-items");
 
-
-    } else {
-        inputText.style.borderColor =`red` 
-        validationMessage.innerText = "Please enter a task.";
-        validationMessage.style.display = "block";
-    }
-});
+                boardItems.appendChild(newTaskItem);
+                addQuerySelectorToTasks()
+                taskInputs[index].value = "";
+            }
+        });
+    });
+}
+addTaskEventListener()
