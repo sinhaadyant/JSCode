@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #171717; /* Dark background color */
+    color: #fff; /* White text color */
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .board {
+    flex: 1;
+    min-height: 400px;
+    background-color: #262626; /* Dark board background color */
+    border: 1px solid #444; /* Dark border color */
+    border-radius: 6px;
+    padding: 15px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .board > h3 {
+    text-align: center;
+    background-color: #6140476e; /* Blue header background color */
+    color: #fff; /* White text color */
+    border-radius: 4px;
+    padding: 12px 0;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    margin: 0;
+  }
+  
+  .task {
+    padding: 12px;
+    margin: 10px 0;
+    background-color: #333; /* Dark task background color */
+    border: 1px solid #444; /* Dark border color */
+    border-radius: 4px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  
+  .task:hover {
+    transform: scale(1.05);
+  }
+  .dragging {
+    background-color: #444; /* Darker background color while dragging */
+    transform: scale(1.1);
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.5); /* Increased shadow while dragging */
+    transition: 0.2s;
+    cursor: grabbing; /* Change cursor to a grabbing hand while dragging */
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+    .board {
+      width: 100%;
+    }
+  }
+  .add-task {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 60%;
+    margin-right: 10px;
+  }
+  
+  .add-button {
+    padding: 10px 20px;
+    background-color: #007BFF; /* Blue button background color */
+    color: #fff; /* White text color */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  #add-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  .error-message {
+    color: #FF3333; /* Red text color for error message */
+    margin-top: 5px;
+    font-size: 14px;
+    display: none;
+  }
+  .count-label {
+    font-size: 12px;
+    margin-left: 10px;
+    background-color: #007BFF; /* Blue background color */
+    color: #fff; /* White text color */
+    padding: 2px 6px;
+    border-radius: 10px;
+  }
+  

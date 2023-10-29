@@ -1,20 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Guess the Color Game</title>
-    <link rel="stylesheet" href="game.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Kanban Board</title>
 </head>
 <body>
-    <div class="container">
-        <h1 class="header">Guess the Color Game</h1>
-        <div id="code"></div>
-        <div id="score"></div>
-        <div class="grid-container" id="main"></div>
-        <p id="msg"></p>
+    <div class="add-task">
+        <input type="text" id="task-input" placeholder="Enter a task">
+        <button class="add-button" id="add-task">Add Task</button>
+        <p id="validation-message" class="error-message"></p>
     </div>
+
+    <div class="add-task">
+        <input type="text" id="board-input" placeholder="Enter Board">
+        <button class="add-button" id="add-board">Add Board</button>
+        <p id="validation-message-board" class="error-message"></p>
+    </div>
+    <div class="container" id="main-container">
+        <div class="board" id="todo-board">
+            <h3>
+                Todo
+                <span class="count-label">0</span>
+            </h3>
+        </div>
+        <div class="board">
+            <h3>
+                Done
+                <span class="count-label">0</span>
+            </h3> 
+        </div>
+    </div>
+    <script src="kanban.js"></script>
+    <script src="tasks.js"></script>
+    <script src="boards.js"></script>
+    <script src="editable.js"></script>
 </body>
-<script src="game.js"></script>
 </html>
