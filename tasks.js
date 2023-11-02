@@ -4,7 +4,6 @@ function addTaskEventListener() {
 
   addTaskButtons.forEach((addTaskButton, index) => {
     addTaskButton.addEventListener("click", () => {
-      console.log("Add clicked");
       const taskText = taskInputs[index].value.trim();
       if (taskText !== "") {
         const newTaskItem = document.createElement("li");
