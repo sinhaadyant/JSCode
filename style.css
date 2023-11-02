@@ -14,34 +14,34 @@
     align-items: center;
   }
   
-  .toolbox-cont>* {
+  .toolbox-cont > * {
     margin-left: 4rem;
   }
   
   .toolbox-priority-cont {
     height: 3.5rem;
     width: 18rem;
-    background-color: #3d3d3d;
+    background-color:  #3d3d3d;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
   }
   
   
-  .action-btn-cont {
-    height: 3.5rem;
-    width: 8rem;
-    background-color: #3d3d3d;
-    display: flex
+  .action-btn-cont{
+         height:3.5rem ;
+         width:8rem ;
+         background-color: #3d3d3d;
+         display:flex
   }
   
-  .action-btn-cont>* {
-    display: flex;
-    justify-content: center;
-    width: 50%;
-    font-size: 2rem;
-    align-items: center;
-    color: white;
+  .action-btn-cont>*{
+         display: flex;
+         justify-content: center;
+         width: 50%;
+         font-size: 2rem;
+         align-items: center;
+         color: white;
   
   }
   
@@ -67,33 +67,33 @@
   }
   
   
-  .modal-cont {
+  .modal-cont{
     height: 50vh;
     width: 45vw;
     background: lightblue;
     position: absolute;
-    top: 30%;
-    left: 25%;
+    top : 30%;
+    left : 25%;
     display: none;
   
   }
   
   
-  .textArea-cont {
+  .textArea-cont{
     height: 100%;
     width: 75%;
     background-color: #dfe4ea;
     outline: none;
     border: none;
-    resize: none;
+    resize : none;
     font-size: 2rem;
     padding: 2rem;
   }
   
   
-  .priority-colors-container {
+  .priority-colors-container{
     height: 100%;
-    width: 25%;
+    width:25% ;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -101,74 +101,63 @@
     background-color: #4b4b4b
   }
   
-  .priority-color {
+  .priority-color{
     height: 3rem;
     width: 5rem;
   }
   
   
-  .main-cont {
-    display: flex;
-    gap: 2rem;
+  .main-cont{
+    display:flex;
+    gap:2rem;
     justify-content: center;
     padding: 2rem;
     flex-wrap: wrap;
   }
   
   
-  .ticket-cont {
+  .ticket-cont{
     height: 12rem;
     width: 15rem;
     background-color: coral;
   }
   
   
-  .ticket-color {
+  .ticket-color{
     height: 1rem;
   }
   
   
-  .ticket-id {
+  .ticket-id{
     background-color: yellow;
     height: 2rem;
   }
   
-  .ticket-lock,
-  .ticket-unlock {
+  .ticket-lock{
     display: flex;
     font-size: 1.5rem;
     justify-content: flex-end;
     margin-top: 90px;
     margin-right: 5px;
+  
   }
   
-  .ticket-cont button {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: transparent;
-    color: white;
-    font-size: large;
-    border: 2px double #dfe4ea;
-  }
-  
-  .ticket-cont button:hover {
-    cursor: pointer;
-  }
-  
-  .add-btn:hover {
+  .add-btn:hover{
     background-color: #4BB543;
   }
   
   
-  .remove-btn:hover {
+  .remove-btn:hover{
     background-color: #4BB543;
   }
   
   
-  .toolbox-priority-cont>*:hover {
-    background-color: #485460;
+  .toolbox-priority-cont>*:hover{
+          background-color: #485460;
   }
   
   
-  .active {
+  .active{
     border: 5px solid coral;
   }
+  
