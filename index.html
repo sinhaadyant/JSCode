@@ -1,82 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Kanban Board</title>
-</head>
-<body>
-  
-<section class="board-info-bar">
-
-	<div class="board-controls">
-
-		<button class="board-title btn">
-			<h2>Kanban Board</h2>
-		</button>
-	</div>
-    <div class="board-search">
-        <input type="search" class="board-search-input" placeholder="Search" aria-label="Board Search"  id="search-input">
+  </head>
+  <body>
+    <section class="board-info-bar">
+      <div class="board-controls">
+        <button class="board-title btn">
+          <h2>Kanban Board</h2>
+        </button>
+      </div>
+      <div class="board-search">
+        <input
+          type="search"
+          class="board-search-input"
+          placeholder="Search"
+          aria-label="Board Search"
+          id="search-input"
+        />
         <i class="search-icon" aria-hidden="true">🔎</i>
-    </div>
- 
-
-</section> 
-<section class="lists-container" id="main-container">
-    
-	<div class="board"  id="todo-board"> 
-
-		<h3 class="board-title">
-            <div class="board-header"> 
-                <input type="color" class="color-input" value="#00ff00"> 
-              </div>
-            <span class="board-title" contenteditable="true">Tasks to Do</span>
-            <span class="count-label">0</span> 
+      </div>
+    </section>
+    <section class="lists-container" id="main-container">
+      <div class="board" id="todo-board">
+        <h3 class="board-title">
+          <div class="board-header">
+            <input type="color" class="color-input" value="#00ff00" />
+          </div>
+          <span class="board-title" contenteditable="true">Tasks to Do</span>
+          <span class="count-label">0</span>
         </h3>
 
-		<ul class="board-items">
-			<li class="task" draggable="true" >Complete mock-up for client website</li>
-			<li class="task" draggable="true" >Email mock-up to client for feedback</li>
-			<li class="task" draggable="true" >Update personal website header background image</li>
-			<li class="task" draggable="true" >Update personal website heading fonts</li>
-			 
-		</ul>
-
-		<div class="add-task-container">
-            <textarea class="add-task-input" placeholder="Add a task"></textarea>
-            <button class="add-card-btn btn">Add a task</button>
-        </div>
-
-	</div>
-
-	<div class="board">
-
-		<h3 class="board-title"> 
-            <div class="board-header"> 
-                <input type="color" class="color-input" value="#00ff00"> 
-              </div>
-            <span class="board-title" contenteditable="true">Completed</span>
-            <span class="count-label">0</span>
-            <input type="color" style="display: none;">
-        </h3>
-
-		<ul class="board-items">
-			<li class="task" draggable="true" >Clear email inbox</li>
-			<li class="task" draggable="true" >Finalise requirements for client web design</li> 
-		</ul>
+        <ul class="board-items">
+          <li class="task" draggable="true">
+            <span class="task-text" contenteditable="true"
+              >Complete mock-up for client website</span
+            >
+            <button class="edit-button">📝</button>
+            <button class="lock-button">🔐</button>
+          </li>
+          <li class="task" draggable="true">
+            <span class="task-text" contenteditable="true"
+              >Email mock-up to client for feedback</span
+            >
+            <button class="edit-button">📝</button>
+            <button class="lock-button">🔐</button>
+          </li>
+          <li class="task" draggable="true">
+            <span class="task-text" contenteditable="true"
+              >Update personal website header background image</span
+            >
+            <button class="edit-button">📝</button>
+            <button class="lock-button">🔐</button>
+          </li>
+          <li class="task" draggable="true">
+            <span class="task-text" contenteditable="true"
+              >Update personal website heading fonts</span
+            >
+            <button class="edit-button">📝</button>
+            <button class="lock-button">🔐</button>
+          </li>
+        </ul>
 
         <div class="add-task-container">
-            <textarea class="add-task-input" placeholder="Add a task"></textarea>
-            <button class="add-card-btn btn">Add a task</button>
+          <textarea class="add-task-input" placeholder="Add a task"></textarea>
+          <button class="add-card-btn btn">Add a task</button>
         </div>
-	</div> 
-	 <div class="input-with-button">
-        <input type="text" id="board-input" placeholder="Enter Board Name">
+      </div>
+
+      <div class="board">
+        <h3 class="board-title">
+          <div class="board-header">
+            <input type="color" class="color-input" value="#00ff00" />
+          </div>
+          <span class="board-title" contenteditable="true">Completed</span>
+          <span class="count-label">0</span>
+          <input type="color" style="display: none" />
+        </h3>
+
+        <ul class="board-items">
+          <li class="task" draggable="true">
+            <span class="task-text" contenteditable="true"
+              >Clear email inbox</span
+            >
+            <button class="edit-button">📝</button>
+            <button class="lock-button">🔐</button>
+          </li>
+          <li class="task" draggable="true">
+            <span class="task-text" contenteditable="true"
+              >Finalise requirements for client web design</span
+            >
+            <button class="edit-button">📝</button>
+            <button class="lock-button">🔐</button>
+          </li>
+        </ul>
+
+        <div class="add-task-container">
+          <textarea class="add-task-input" placeholder="Add a task"></textarea>
+          <button class="add-card-btn btn">Add a task</button>
+        </div>
+      </div>
+      <div class="input-with-button">
+        <input type="text" id="board-input" placeholder="Enter Board Name" />
         <button class="add-board-btn btn" id="add-board">Add Board</button>
-    </div>
- 
-</section> 
+      </div>
+    </section>
 
     <script src="kanban.js"></script>
     <script src="tasks.js"></script>
@@ -84,5 +115,6 @@
     <script src="editable.js"></script>
     <script src="search.js"></script>
     <script src="color.js"></script>
-</body>
+    <script src="lock.js"></script>
+  </body>
 </html>

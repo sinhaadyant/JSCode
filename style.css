@@ -211,7 +211,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #000;
-    max-height: calc(100vh - 11.8rem);
+    max-height: calc(100vh - 9.8rem);
     border-radius: 0.3rem;
     margin-right: 1rem;
 }
@@ -468,3 +468,24 @@ input[type="color"] {
     border-radius: 50%;
     
   } 
+
+  .edit-button, .lock-button  {
+    background-color: #0079bf;
+    color: #fff;
+    border: none;
+    padding: 4px 4px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    float: right;
+    margin-right: 6px;
+  }
+  
+  .edit-button:hover {
+    background-color: #005c91;
+  } 
+
+  .task-text{
+    display: inline-block;
+    min-height: 29px;
+  }
