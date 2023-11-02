@@ -258,6 +258,7 @@ body {
     margin-bottom: 0.6rem;
     word-wrap: break-word;
     cursor: pointer;
+    border-right: 4px solid lightgreen;
 }
 
 .board-items li:last-of-type {

@@ -6,12 +6,11 @@ if(addBoardButton){
     addBoardButton.addEventListener("click", () => {
         const value = inputTextBoard.value.trim();
         if (value) {
-            //   <div class="board" id="todo-board">
             const board = document.createElement("div");
             board.classList.add("board");
             board.innerHTML = `<h3  class="board-title">
             <div class="board-header"> 
-                <input type="color" value="#00ff00"> 
+                <input type="color" class="color-input" value="#00ff00"> 
               </div>
             <span class="board-title" contenteditable="true">${value}</span>
             <span class="count-label">0</span></h3>
@@ -29,7 +28,7 @@ if(addBoardButton){
             addListnerForEditable()
             updateBoardTaskCount();
             addTaskEventListener()
-            
+            querySelectorForColor()
             inputTextBoard.value = ""; 
             inputTextBoard.style.borderColor =`grey` 
             

@@ -18,6 +18,10 @@ function addQuerySelectorToBoards(){
         board.addEventListener("dragover",(e)=>{
             const task = document.querySelector(".dragging");
             const closestEle = getClosestElement(board,e.clientY);
+            const currentBoardColor = board.parentElement.querySelector(".color-input");
+            if(currentBoardColor){
+                task.style.borderRight = `4px solid ${currentBoardColor.value}`
+            }
             if(task && board && closestEle){
                 board.insertBefore(task,closestEle);
             }else{
