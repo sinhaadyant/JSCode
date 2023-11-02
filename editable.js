@@ -1,22 +1,21 @@
-const boardTitles = document.querySelectorAll('.board-title');
+const boardTitles = document.querySelectorAll(".board-title");
 
-function addListnerForEditable(){
-    container.addEventListener("click", (event) => {
-        const task = event.target;
-    
-        if (task.classList.contains("task") || task.classList.contains("board-title")) {
-            task.contentEditable = true; 
-            task.focus();
-            task.addEventListener("keydown", (e) => {
-                if (e.key === "Enter") {
-                    e.preventDefault();
-                    task.blur(); 
-                }
-            });
-            task.addEventListener("blur", () => {
-                task.contentEditable = false; 
-             });
+function addListnerForEditable() {
+  const editButtons = document.querySelectorAll(".edit-button");
+  editButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const task =
+        button.parentElement.parentElement.querySelector(".task-text");
+      if (task) {
+        if (task.getAttribute("contenteditable") == "true") {
+          button.innerHTML = `📝`;
+          task.setAttribute("contenteditable", false);
+        } else {
+          button.innerHTML = `🛑`;
+          task.setAttribute("contenteditable", true);
         }
+      }
     });
+  });
 }
-addListnerForEditable()
+addListnerForEditable();

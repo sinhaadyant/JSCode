@@ -488,4 +488,5 @@ input[type="color"] {
   .task-text{
     display: inline-block;
     min-height: 29px;
+    width: 80%;
   }

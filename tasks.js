@@ -11,7 +11,7 @@ function addTaskEventListener() {
         newTaskItem.classList.add("task");
         newTaskItem.draggable = true;
         newTaskItem.innerHTML = ` 
-            <span class="task-text" contenteditable="true"
+            <span class="task-text" 
               >${taskText}</span
             >
             <button class="edit-button">📝</button>
@@ -24,6 +24,7 @@ function addTaskEventListener() {
         addQuerySelectorToTasks();
         searchTasks();
         eventListnersforLock();
+        addListnerForEditable();
         taskInputs[index].value = "";
       }
     });
