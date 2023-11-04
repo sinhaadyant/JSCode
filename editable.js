@@ -7,9 +7,14 @@ function addListnerForEditable() {
       const task =
         button.parentElement.parentElement.querySelector(".task-text");
       if (task) {
-        if (task.getAttribute("contenteditable") == "true") {
-          button.innerHTML = `📝`;
-          task.setAttribute("contenteditable", false);
+        if (task.hasAttribute("contenteditable")) {
+          if (task.getAttribute("contenteditable") == "true") {
+            button.innerHTML = `📝`;
+            task.setAttribute("contenteditable", false);
+          } else {
+            button.innerHTML = `🛑`;
+            task.setAttribute("contenteditable", true);
+          }
         } else {
           button.innerHTML = `🛑`;
           task.setAttribute("contenteditable", true);

@@ -16,9 +16,16 @@ function addTaskEventListener() {
             <button class="edit-button">📝</button>
             <button class="lock-button">🔐</button>
           `;
+
         const board = addTaskButton.closest(".board");
         const boardItems = board.querySelector(".board-items");
 
+        const colorInputs = board.querySelector(".color-input");
+        if (colorInputs.hasAttribute("data-color")) {
+          newTaskItem.style.borderRight = `4px solid ${colorInputs.getAttribute(
+            "data-color"
+          )}`;
+        }
         boardItems.appendChild(newTaskItem);
         addQuerySelectorToTasks();
         searchTasks();

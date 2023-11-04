@@ -1,14 +1,14 @@
 const addBoardButton = document.getElementById("add-board");
 const inputTextBoard = document.getElementById("board-input");
-const container = document.getElementById("main-container")
- 
-if(addBoardButton){
-    addBoardButton.addEventListener("click", () => {
-        const value = inputTextBoard.value.trim();
-        if (value) {
-            const board = document.createElement("div");
-            board.classList.add("board");
-            board.innerHTML = `<h3  class="board-title">
+const container = document.getElementById("main-container");
+
+if (addBoardButton) {
+  addBoardButton.addEventListener("click", () => {
+    const value = inputTextBoard.value.trim();
+    if (value) {
+      const board = document.createElement("div");
+      board.classList.add("board");
+      board.innerHTML = `<h3  class="board-title">
             <div class="board-header"> 
                 <input type="color" class="color-input" value="#00ff00"> 
               </div>
@@ -21,20 +21,17 @@ if(addBoardButton){
                 <button class="add-card-btn btn">Add a task</button>
             </div>
             `;
-            const addBoard = document.querySelector(".input-with-button")
-            container.insertBefore(board,addBoard);
+      const addBoard = document.querySelector(".input-with-button");
+      container.insertBefore(board, addBoard);
 
-            addQuerySelectorToBoards()
-            addListnerForEditable()
-            updateBoardTaskCount();
-            addTaskEventListener()
-            querySelectorForColor()
-            inputTextBoard.value = ""; 
-            inputTextBoard.style.borderColor =`grey` 
-            
-    
-        } else {
-            inputTextBoard.style.borderColor =`red`  
-        }
-    });
-} 
+      addQuerySelectorToBoards();
+      updateBoardTaskCount();
+      addTaskEventListener();
+      querySelectorForColor();
+      inputTextBoard.value = "";
+      inputTextBoard.style.borderColor = `grey`;
+    } else {
+      inputTextBoard.style.borderColor = `red`;
+    }
+  });
+}
