@@ -1,42 +1,44 @@
-const htmlTextarea = document.querySelector("#html-code");
-const cssTextarea = document.querySelector("#css-code");
-const jsTextarea = document.querySelector("#js-code");
-const iframe = document.getElementById("output");
-const saveButton = document.getElementById("save-button");
-let content = "";
-const username = document.getElementById("username");
-const updateIframe = () => {
-  content = `
-        <style>
-          ${cssTextarea.value}
-        </style>
+const main = document.querySelector(".main");
+const stars = document.querySelectorAll(".star");
+const score = document.getElementById("score");
 
-        ${htmlTextarea.value}
-        
-        <script>
-          ${jsTextarea.value}
-          <\/script>
-      `;
-  iframe.srcdoc = content;
-};
+const getStarValue = (el) => Number(el.getAttribute("data-value"));
+function reset() {
+  stars.forEach((star) => {
+    star.style.color = "white";
+  });
+}
 
-[htmlTextarea, cssTextarea, jsTextarea].forEach((textarea) => {
-  textarea.addEventListener("input", updateIframe);
+main.addEventListener("click", (e) => {
+  const value = e.target.getAttribute("data-value");
+  reset();
+  score.innerText = `Score : (${value}/5)`;
+  const color = value > 2 ? "gold" : "red";
+  for (let i = 0; i < Number(value); i++) {
+    const el = main.querySelector(`:nth-child(${i})`);
+
+    el.style.color = color;
+  }
 });
+// stars.forEach((star) => {
+//   star.addEventListener("click", () => {
+//     const value = star.getAttribute("data-value");
+//     reset();
+//     score.innerText = `Score : (${value}/5)`;
+//     const color = value > 2 ? "gold" : "red";
+//     for (let i = 0; i < Number(value); i++) {
+//       stars[i].style.color = color;
+//     }
+//   });
+// });
 
-saveButton.addEventListener("click", () => {
-  localStorage.setItem("htmlCode", htmlTextarea.value);
-  localStorage.setItem("cssCode", cssTextarea.value);
-  localStorage.setItem("jsCode", jsTextarea.value);
-  localStorage.setItem("username", username.innerText);
-});
-
-const loadFromLocalStorage = () => {
-  htmlTextarea.value = localStorage.getItem("htmlCode") || "";
-  cssTextarea.value = localStorage.getItem("cssCode") || "";
-  jsTextarea.value = localStorage.getItem("jsCode") || "";
-  username.innerText = localStorage.getItem("username") || "Adyant Sinha";
-  updateIframe();
-};
-
-window.addEventListener("load", loadFromLocalStorage);
+// stars.forEach((star) => {
+//   star.addEventListener("mouseover", () => {
+//     const value = star.getAttribute("data-value");
+//     reset();
+//     const color = value > 2 ? "gold" : "red";
+//     for (let i = 0; i < Number(value); i++) {
+//       stars[i].style.color = color;
+//     }
+//   });
+// });
