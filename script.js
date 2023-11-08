@@ -1,53 +1,33 @@
-// DUMMY DATA FOR THE COLORS
-let ticketsArr = [
-    {
-      ticketTask: "This is task 1 (lightgreen)",
-      ticketColor: "lightgreen",
-      ticketID: "dGSUFjfiq",
-    },
-    {
-      ticketTask: "This is task 2 (black)",
-      ticketColor: "black",
-      ticketID: "ay8dQS0o1",
-    },
-    {
-      ticketTask: "This is task 3 (lightblue)",
-      ticketColor: "lightblue",
-      ticketID: "fOqBFgQtx",
-    },
-    {
-      ticketTask: "This is task 4 (lightpink)",
-      ticketColor: "lightpink",
-      ticketID: "fOqBFgQtx",
-    },
-  ];
-  
-  // CALLING createTicket() function for each value in ticketsArr
-  ticketsArr.forEach(function (ticket) {
-    createTicket(ticket.ticketTask, ticket.ticketColor, ticket.ticketID);
-  });
-  
-  // ADDING TICKET TO DOM
-  function createTicket(ticketTask, ticketColor, ticketID) {
-    let id = ticketID || shortid();
-    let ticketCont = document.createElement("div");
-    ticketCont.setAttribute("class", "ticket-cont");
-  
-    ticketCont.innerHTML = `<div class="ticket-color ${ticketColor}"></div>
-         <div class="ticket-id">#${id}</div>
-         <div class="task-area">${ticketTask}</div>
-         <div class="ticket-lock">
-           <i class="fa-solid fa-lock"></i>
-        </div>`;
-  
-    let mainCont = document.querySelector(".main-cont");
-    mainCont.append(ticketCont);
-  
-    if (!ticketID) {
-      ticketsArr.push({ ticketTask, ticketColor, ticketID: id });
-      localStorage.setItem("tickets", JSON.stringify(ticketsArr));
+const container = document.querySelector(".container");
+
+if (data && data.length > 0) {
+  data.forEach((product) => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+
+    let starsEle = ``;
+    const rating = Number(Math.round(product.rating.rate));
+
+    for (let i = 1; i <= rating; i++) {
+      starsEle += `<span class="star__filled">&#9733;</span>`;
     }
-  
-    console.log(ticketsArr);
-  }
-  
+
+    for (let i = rating; i < 5; i++) {
+      starsEle += `<span class="star__notfilled">&#9734;</span>`;
+    }
+    card.innerHTML = ` <div class="details">
+    <span class="product__name">${product.title}</span>
+    <br>
+    <span class="product__category">${product.category}</span>
+ 
+    <div class="all__star"> 
+    ${starsEle} 
+</div>
+    <div class="rating__count">Rating Count : <span>${product.rating.count}</span></div>
+    </div>
+    <div class="btn">
+    <button class="btn__buy">Buy Now</button>
+    </div>`;
+    container.appendChild(card);
+  });
+}
