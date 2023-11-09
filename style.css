@@ -2,13 +2,14 @@
     margin: 0px;
     padding: 0px;
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: #24262e;
+   
 }
 .header{
     display: flex;
     justify-content: start;
     align-items: center;
     gap:4px;  
+    background-color: #24262e;
 }
 .header-logo{
     width: 28px;
@@ -36,34 +37,51 @@ svg{
     width: 100%; 
     font-size: 20px;
     padding: 4px;
+    background-color: #24262e;
     
 }
 .main{
     display: flex;
     width: 100%;
     height:90%;
-}
-.left-section{
-    width: 50%;
+    background-color: #24262e; 
 }
 .editors{
-    min-height: 100px;
+    flex: 33.3%;
+
 }
+.left-section{
+    flex: 40%;
+    display: flex;
+    flex-direction: column;
+
+} 
 .right-section{ 
-    width: 100%;
+    flex: 60%;
     padding: 2px;
     background-color: white;
     margin: 10px;
+    display: flex; 
+    flex-direction: column;
+}
+.head-right-button{
+    display: flex;
+    justify-content: end;
 }
 .save-btn{
-    float: right;
-    padding: 7px 16px;
     background-color: #434756;
-    color: #fff;
-    text-align: center;
-    margin-right: 7px;
-    font-size: 18px;
+    border: none;
     border-radius: 4px;
+    padding: 10px 16px;
+    margin: 1px 10px 1px 0px; 
+    color: #fff; 
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.icons{
+    width: 17px;
+    height: 17px;
 }
 .editor-headings{ 
     color: grey;
@@ -77,8 +95,7 @@ svg{
     min-height: 190px;
     padding: 10px;
     background-color: #24262e;
-    color: #fff;
-    
+    color: #fff !important; 
  }
  .headingStart{ 
     margin: 3px;
@@ -97,6 +114,137 @@ svg{
  }
 iframe{
     width: 100%;
-    height: 100%;
+    height: 80%;
     background-color: white;
 }
+ 
+
+.CodeMirror {
+    border: 1px solid #eee;
+    height: 27vh !important;
+  }
+  
+
+
+  .m-d.expand-list{
+    margin: 0;
+    padding: 0;
+}
+.m-d.expand-list > li{
+    list-style-type: none;
+    padding: 15px 0;
+    border-bottom: 1px solid #212121;
+    position: relative;
+/*         max-width: 80%; */
+}
+.m-d label[class^="tab"]:hover{
+    cursor: pointer;
+}
+.m-d input{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.m-d input[class^="tab"]{
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    top: 0; 
+}
+    .m-d input[class^="tab"]:hover{
+        cursor: pointer;
+    }
+.m-d label[class^="tab"]{
+    font-weight: bold;
+}
+.m-d .content{
+    height: auto;
+    max-height: 0;
+    max-width: 300px;
+/*        background: yellow;*/
+    overflow: hidden;
+    transform: translateY(20px);
+    transition: all 180ms ease-in-out 0ms; 
+}
+.m-d li[data-md-content="100"] input[class^="tab"]:checked ~ .content{
+    max-height: 100px;
+    transition: all 150ms ease-in-out 0ms;
+}
+.m-d li[data-md-content="200"] input[class^="tab"]:checked ~ .content{
+    max-height: 200px;
+    transition: all 200ms ease-in-out 0ms;
+}
+.m-d li[data-md-content="300"] input[class^="tab"]:checked ~ .content{
+    max-height: 300px;
+    transition: all 250ms ease-in-out 0ms;
+}
+.m-d li[data-md-content="400"] input[class^="tab"]:checked ~ .content{
+    max-height: 400px;
+    transition: all 250ms ease-in-out 0ms;
+}
+.m-d li[data-md-content="500"] input[class^="tab"]:checked ~ .content{
+    max-height: 500px;
+    transition: all 250ms ease-in-out 0ms;
+}
+.m-d li[data-md-content="600"] input[class^="tab"]:checked ~ .content{
+    max-height: 600px;
+    transition: all 250ms ease-in-out 0ms;
+}
+.m-d li[data-md-content="700"] input[class^="tab"]:checked ~ .content{
+    max-height: 700px;
+    transition: all 300ms ease-in-out 0ms;
+}
+.m-d li[data-md-content="800"] input[class^="tab"]:checked ~ .content{
+    max-height: 800px;
+    transition: all 300ms ease-in-out 0ms;
+}
+.m-d li[data-md-content="900"] input[class^="tab"]:checked ~ .content{
+    max-height: 900px;
+    transition: all 300ms ease-in-out 0ms;
+}
+.m-d li[data-md-content="1000"] input[class^="tab"]:checked ~ .content{
+    max-height: 1000px;
+    transition: all 350ms ease-in-out 0ms;
+}
+    .m-d li[data-md-content=""] input[class^="tab"]:checked ~ .content{
+    max-height: 1000px;
+    transition: all 250ms ease-in-out 0ms;
+}
+.m-d input[class^="tab"]:checked ~ .content{
+    margin-bottom: 20px;
+}
+
+.m-d .open-close-icon{
+    display: inline-block;
+    position: absolute;
+    right: 20px;
+    transform: translatey(2px);
+}
+.m-d .open-close-icon i{
+    position: absolute;
+    left: 0;
+}
+.m-d .open-close-icon .fa-minus{
+    transform:rotate(-90deg);
+    transition: transform 150ms ease-in-out 0ms;
+}
+.m-d input[class^="tab"]:checked ~ .open-close-icon .fa-minus{
+    transform: rotate(0deg);
+    transition: transform 150ms ease-in-out 0ms;
+}
+.m-d .open-close-icon .fa-plus{
+    opacity: 1;
+    transform:rotate(-90deg);
+    transition: opacity 50ms linear 0ms, transform 150ms ease-in-out 0ms;
+}
+.m-d input[class^="tab"]:checked ~ .open-close-icon .fa-plus{
+    opacity: 0;
+    transform: rotate(0deg);
+    transition: opacity 50ms linear 0ms, transform 150ms ease-in-out 0ms; 
+}
+
+
+ 
+
+

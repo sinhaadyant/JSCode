@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Codepen Clone</title>
     <link rel="stylesheet" href="style.css" />
+
+    <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.css">
+
+    <link rel="stylesheet"
+  href="https://codemirror.net/5/theme/dracula.css">
+</link>
+
   </head>
   <body>
     <div class="container">
@@ -26,27 +34,71 @@
             </div>
           </div>
         </div>
-        <div class="headerEles">
-          <div class="headerEles">
-            <button class="save-btn" id="save-button">☁️ Save</button>
-          </div>
+        <div class="headerEles head-right-button" id="head-right-button">
+          <button class="save-btn" id="save-button">☁️ Save</button>
+          <button class="save-btn" id="left-float-button" >
+            <svg viewBox="0 0 20 20" style="transform: rotate(-90deg)" class="EditorHeaderViewSwitcherLayoutButtons-module_newPenLeftLayout-PhHzQ" width="20" height="20"><path d="M0 9.002C0 8.45.455 8 .992 8h18.016c.548 0 .992.456.992 1.002v9.996c0 .553-.455 1.002-.992 1.002H.992C.444 20 0 19.544 0 18.998V9.002Zm0-8C0 .45.451 0 .99 0h4.02A.99.99 0 0 1 6 1.003v4.994C6 6.551 5.549 7 5.01 7H.99A.99.99 0 0 1 0 5.997V1.003Zm7 0C7 .45 7.451 0 7.99 0h4.02A.99.99 0 0 1 13 1.003v4.994C13 6.551 12.549 7 12.01 7H7.99A.99.99 0 0 1 7 5.997V1.003Zm7 0C14 .45 14.451 0 14.99 0h4.02A.99.99 0 0 1 20 1.003v4.994C20 6.551 19.549 7 19.01 7h-4.02A.99.99 0 0 1 14 5.997V1.003Z"></path></svg>
+          </button>
+          <button class="save-btn" id="right-float-button">
+            <svg
+              viewBox="0 0 20 20"
+              class="EditorHeaderViewSwitcherLayoutButtons-module_newPenLeftLayout-PhHzQ"
+              width="20"
+              height="20"
+              style="transform: rotate(90deg)"
+            >
+              <path
+                d="M0 9.002C0 8.45.455 8 .992 8h18.016c.548 0 .992.456.992 1.002v9.996c0 .553-.455 1.002-.992 1.002H.992C.444 20 0 19.544 0 18.998V9.002Zm0-8C0 .45.451 0 .99 0h4.02A.99.99 0 0 1 6 1.003v4.994C6 6.551 5.549 7 5.01 7H.99A.99.99 0 0 1 0 5.997V1.003Zm7 0C7 .45 7.451 0 7.99 0h4.02A.99.99 0 0 1 13 1.003v4.994C13 6.551 12.549 7 12.01 7H7.99A.99.99 0 0 1 7 5.997V1.003Zm7 0C14 .45 14.451 0 14.99 0h4.02A.99.99 0 0 1 20 1.003v4.994C20 6.551 19.549 7 19.01 7h-4.02A.99.99 0 0 1 14 5.997V1.003Z"
+              ></path>
+            </svg>
+          </button>
+          <button class="save-btn" id="top-float-button">
+            <svg
+              viewBox="0 0 20 20"
+              class="EditorHeaderViewSwitcherLayoutButtons-module_newPenRightLayout-X2VCi"
+              width="20"
+              height="20"
+            >
+              <path
+                d="M0 9.002C0 8.45.455 8 .992 8h18.016c.548 0 .992.456.992 1.002v9.996c0 .553-.455 1.002-.992 1.002H.992C.444 20 0 19.544 0 18.998V9.002Zm0-8C0 .45.451 0 .99 0h4.02A.99.99 0 0 1 6 1.003v4.994C6 6.551 5.549 7 5.01 7H.99A.99.99 0 0 1 0 5.997V1.003Zm7 0C7 .45 7.451 0 7.99 0h4.02A.99.99 0 0 1 13 1.003v4.994C13 6.551 12.549 7 12.01 7H7.99A.99.99 0 0 1 7 5.997V1.003Zm7 0C14 .45 14.451 0 14.99 0h4.02A.99.99 0 0 1 20 1.003v4.994C20 6.551 19.549 7 19.01 7h-4.02A.99.99 0 0 1 14 5.997V1.003Z"
+              ></path>
+            </svg>
+          </button>
+          <img
+            src="https://assets.codepen.io/t-1/user-default-avatar.jpg?format=auto&version=0&width=46&height=44"
+            alt=""
+          />
         </div>
       </div>
-      <div class="main">
-        <div class="left-section">
+      <div class="main" id="main">
+        <div class="left-section"  id="left-section">
           <div class="editors">
             <div class="editor-headings">
-              <span class="headingStart headingStart-html"> / </span>
+              <svg viewBox="0 0 15 15" class="icons" id="icon-file-html">
+                <rect fill="#FF3C41" width="15" height="15" rx="4"></rect>
+                <path
+                  d="M10.97 2.29a.563.563 0 0 0-.495-.29.572.572 0 0 0-.488.277l-5.905 9.86a.565.565 0 0 0-.007.574c.102.18.287.289.495.289a.572.572 0 0 0 .488-.277l5.905-9.86a.565.565 0 0 0 .007-.574"
+                  fill="#28282B"
+                ></path>
+              </svg>
+
               HTML
             </div>
             <div class="editor-content">
-              <textarea id="html-code"></textarea>
+              <textarea id="html-code" class="cm-s-material-darker"></textarea>
             </div>
           </div>
 
           <div class="editors">
             <div class="editor-headings">
-              <span class="headingStart headingStart-css"> * </span>
+              <svg viewBox="0 0 15 15" class="icons" id="icon-file-css">
+                <rect fill="#0EBEFF" width="15" height="15" rx="4"></rect>
+                <path
+                  d="M8 8.366l1.845 1.065a.507.507 0 0 0 .686-.181.507.507 0 0 0-.186-.685L8.5 7.5l1.845-1.065a.507.507 0 0 0 .186-.685.507.507 0 0 0-.686-.181L8 6.634v-2.13A.507.507 0 0 0 7.5 4c-.268 0-.5.225-.5.503v2.131L5.155 5.569a.507.507 0 0 0-.686.181.507.507 0 0 0 .186.685L6.5 7.5 4.655 8.565a.507.507 0 0 0-.186.685c.134.232.445.32.686.181L7 8.366v2.13c0 .271.224.504.5.504.268 0 .5-.225.5-.503V8.366z"
+                  fill="#282828"
+                ></path>
+              </svg>
+
               CSS
             </div>
             <div class="editor-content">
@@ -55,7 +107,14 @@
           </div>
           <div class="editors">
             <div class="editor-headings">
-              <span class="headingStart headingStart-js"> * </span>
+              <svg viewBox="0 0 15 15" class="icons" id="icon-file-js">
+                <rect fill="#FCD000" width="15" height="15" rx="4"></rect>
+                <path
+                  d="M6.554 3.705c0 .267-.19.496-.452.543-1.2.217-2.12 1.61-2.12 3.275 0 1.665.92 3.057 2.12 3.274a.554.554 0 0 1-.205 1.087c-1.733-.322-3.022-2.175-3.022-4.361 0-2.187 1.289-4.04 3.022-4.362a.554.554 0 0 1 .657.544zm1.892 0c0-.347.316-.607.657-.544 1.733.322 3.022 2.175 3.022 4.362 0 2.186-1.289 4.04-3.022 4.361a.554.554 0 0 1-.205-1.087c1.2-.217 2.12-1.61 2.12-3.274 0-1.665-.92-3.058-2.12-3.275a.551.551 0 0 1-.452-.543z"
+                  fill="#282828"
+                ></path>
+              </svg>
+
               JS
             </div>
             <div class="editor-content">
@@ -63,11 +122,39 @@
             </div>
           </div>
         </div>
-        <div class="right-section output-window">
+        <div class="right-section output-window" id="right-section">
           <iframe frameborder="0" id="output"></iframe>
+          <button id="open-console-button">Open Console</button>
+          <div id="custom-console"></div>
+          
+
+            <ul class="m-d expand-list">
+              <li data-md-content="200">
+                <label name="tab" for="tab1" tabindex="-1" class="tab_lab" role="tab">Console</label>
+                <input type="checkbox" checked class="tab" id="tab1" tabindex="0" />
+                <span class="open-close-icon">
+                  <i class="fas fa-plus"></i>
+                  <i class="fas fa-minus"></i>
+                </span>
+                <div class="console-output">
+                       
+                    </div>
+                </li> 
+            </ul>
+
+        
         </div>
       </div>
     </div>
   </body>
-  <script src="script.js"></script>
+
+  <script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.js">
+</script>
+  <script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/mode/javascript/javascript.min.js">
+</script>
+
+
+  <script src="script.js"></script> 
 </html>
