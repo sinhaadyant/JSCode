@@ -387,13 +387,14 @@ body {
     text-align: center;
     color: #484746;
     font-family: "Lobster", cursive;
+    margin:0px;
     margin-bottom: 14px;
     padding: 0px;
   }
   
   .main-wrapper img {
     margin: 0 auto;
-    width: 44%;
+    width: 20vw;
     display: block;
   }
   
